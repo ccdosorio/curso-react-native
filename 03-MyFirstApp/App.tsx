@@ -1,10 +1,13 @@
 import {SafeAreaView} from 'react-native';
-// import {CounterScreen} from './src/presentation/screens/CounterScreen';
 import {PaperProvider} from 'react-native-paper';
-import {CounterM3Screen} from './src/presentation/screens/CounterM3Screen';
+// import {CounterScreen} from './src/presentation/screens/CounterScreen';
+// import {CounterM3Screen} from './src/presentation/screens/CounterM3Screen';
 // import {HelloWorldScreen} from './src/presentation/screens/HelloWorldScreen';
+// import {BoxObjectModelScreen} from './src/presentation/screens/BoxObjectModelScreen';
 
 import IonIcon from 'react-native-vector-icons/Ionicons';
+import {DimensionScreen} from './src/presentation/screens/DimensionScreen';
+import {PositonScreen} from './src/presentation/screens/PositonScreen';
 
 export const App = () => {
   return (
@@ -14,8 +17,11 @@ export const App = () => {
       }}>
       <SafeAreaView style={{flex: 1}}>
         {/* <HelloWorldScreen name="Christian Osorio" /> */}
+        {/* <CounterM3Screen /> */}
         {/* <CounterScreen /> */}
-        <CounterM3Screen />
+        {/* <BoxObjectModelScreen /> */}
+        {/* <DimensionScreen /> */}
+        <PositonScreen />
       </SafeAreaView>
     </PaperProvider>
   );
