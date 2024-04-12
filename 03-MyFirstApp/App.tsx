@@ -9,7 +9,8 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 // import {DimensionScreen} from './src/presentation/screens/DimensionScreen';
 // import {PositonScreen} from './src/presentation/screens/PositonScreen';
 // import {FlexScreen} from './src/presentation/screens/FlexScreen';
-import {FlexDirectionScreen} from './src/presentation/screens/FlexDirectionScreen';
+// import {FlexDirectionScreen} from './src/presentation/screens/FlexDirectionScreen';
+import {HomeworkScreen} from './src/presentation/screens/HomeworkScreen';
 
 export const App = () => {
   return (
@@ -25,7 +26,8 @@ export const App = () => {
         {/* <DimensionScreen /> */}
         {/* <PositonScreen /> */}
         {/* <FlexScreen /> */}
-        <FlexDirectionScreen />
+        {/* <FlexDirectionScreen /> */}
+        <HomeworkScreen />
       </SafeAreaView>
     </PaperProvider>
   );
