@@ -7,6 +7,42 @@ export const FlexDirectionScreen = () => {
       <View style={[styles.box, styles.box2]} />
       <View style={[styles.box, styles.box3]} />
       <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box2]} />
+      <View style={[styles.box, styles.box3]} />
+      <View style={[styles.box, styles.box4]} />
     </View>
   );
 };
@@ -17,7 +53,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#cfcaca',
     justifyContent: 'space-between',
     alignItems: 'stretch',
-    flexDirection: 'row',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    // gap: 10,
+    // columnGap: 35,
   },
   box: {
     // flex: 1,
@@ -29,7 +68,7 @@ const styles = StyleSheet.create({
   },
   box2: {
     backgroundColor: '#3f3cc4',
-    alignSelf: 'flex-end',
+    // alignSelf: 'flex-end',
   },
   box3: {
     backgroundColor: '#201e87',
