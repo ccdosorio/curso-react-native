@@ -1,32 +1,47 @@
 import {Pressable, Text, View} from 'react-native';
-import {globalStyles} from '../../../config/theme/theme';
-import {DrawerActions, useNavigation} from '@react-navigation/native';
-import {PrimaryBotton} from '../../components/shared/PrimaryBotton';
 import {useEffect} from 'react';
+import {
+  type NavigationProp,
+  useNavigation,
+  DrawerActions,
+} from '@react-navigation/native';
+
+import type {RootStackParams} from '../../routes/StackNavigator';
+import {HamburgerMenu} from '../../components/shared/HamburgerMenu';
+import {globalStyles} from '../../../config/theme/theme';
+import {PrimaryButton} from '../../components/shared/PrimaryButton';
 
 export const HomeScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <Pressable
-          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Text>Menu</Text>
-        </Pressable>
-      ),
-    });
-  }, []);
+  // useEffect(() => {
+  //   navigation.setOptions({
+  //     headerLeft: () => (
+  //       <Pressable onPress={ () => navigation.dispatch( DrawerActions.toggleDrawer )  }>
+  //         <Text>Menu</Text>
+  //       </Pressable>
+  //     )
+  //   })
+  // }, [])
 
   return (
     <View style={globalStyles.container}>
-      <PrimaryBotton
-        label="Products"
-        onPress={() => navigation.navigate('Products' as never)}
+      <HamburgerMenu />
+
+      {/* <Pressable
+        onPress={ () => navigation.navigate('Products' as never)  }
+        style={ globalStyles.primaryButton }>
+        <Text style={ globalStyles.buttonText }>Productos</Text>
+      </Pressable> */}
+
+      <PrimaryButton
+        onPress={() => navigation.navigate('Products')}
+        label="Productos"
       />
-      <PrimaryBotton
+
+      <PrimaryButton
+        onPress={() => navigation.navigate('Settings')}
         label="Settings"
-        onPress={() => navigation.navigate('Settings' as never)}
       />
     </View>
   );
