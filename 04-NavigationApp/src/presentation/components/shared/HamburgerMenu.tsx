@@ -2,7 +2,7 @@ import {DrawerActions, useNavigation} from '@react-navigation/native';
 import {useEffect} from 'react';
 import {Pressable, Text, View} from 'react-native';
 
-export const HamburguerMenu = () => {
+export const HamburgerMenu = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
