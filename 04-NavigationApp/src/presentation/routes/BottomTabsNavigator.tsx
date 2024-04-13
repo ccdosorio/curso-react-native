@@ -40,7 +40,7 @@ export const BottomTabsNavigator = () => {
       <Tab.Screen
         name="Tab2"
         options={{
-          title: 'Tab1',
+          title: 'Tab2',
           tabBarIcon: ({color}) => <Text style={{color}}>Tab2</Text>,
         }}
         component={Tab2Screen}
@@ -48,7 +48,7 @@ export const BottomTabsNavigator = () => {
       <Tab.Screen
         name="Tab3"
         options={{
-          title: 'Tab1',
+          title: 'Tab3',
           tabBarIcon: ({color}) => <Text style={{color}}>Tab3</Text>,
         }}
         component={Tab3Screen}
