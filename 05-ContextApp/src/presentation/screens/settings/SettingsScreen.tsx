@@ -1,10 +1,10 @@
 import {Text, View} from 'react-native';
 import {globalStyles} from '../../../config';
 
-export const SetttingsScreen = () => {
+export const SettingsScreen = () => {
   return (
     <View style={globalStyles.container}>
-      <Text>SetttingsScreen</Text>
+      <Text>SettingsScreen</Text>
     </View>
   );
 };
