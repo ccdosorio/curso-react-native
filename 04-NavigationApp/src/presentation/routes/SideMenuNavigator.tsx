@@ -1,26 +1,29 @@
+import {View, useWindowDimensions} from 'react-native';
 import {
+  createDrawerNavigator,
   DrawerContentComponentProps,
   DrawerContentScrollView,
   DrawerItemList,
-  createDrawerNavigator,
 } from '@react-navigation/drawer';
-import {StackNavigator} from './StackNavigation';
+
 import {ProfileScreen} from '../screens/profile/ProfileScreen';
+import {BottomTabNavigator} from './BottomTabsNavigator';
+import {IonIcon} from '../components/shared/IonIcon';
 import {globalColors} from '../../config/theme/theme';
-import {View, useWindowDimensions} from 'react-native';
-import {BottomTabsNavigator} from './BottomTabsNavigator';
 
 const Drawer = createDrawerNavigator();
 
-export const SideMenuNavigation = () => {
+export const SideMenuNavigator = () => {
   const dimensions = useWindowDimensions();
 
   return (
     <Drawer.Navigator
       drawerContent={props => <CustomDrawerContent {...props} />}
       screenOptions={{
-        headerShown: false,
         drawerType: dimensions.width >= 758 ? 'permanent' : 'slide',
+
+        headerShown: false,
+
         drawerActiveBackgroundColor: globalColors.primary,
         drawerActiveTintColor: 'white',
         drawerInactiveTintColor: globalColors.primary,
@@ -29,12 +32,26 @@ export const SideMenuNavigation = () => {
           paddingHorizontal: 20,
         },
       }}>
-      {/* <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */}
+      {/* <Drawer.Screen name="StackNavigator" component={ StackNavigator } /> */}
       <Drawer.Screen
-        name="BottomTabsNavigator"
-        component={BottomTabsNavigator}
+        options={{
+          drawerIcon: ({color}) => (
+            <IonIcon name="bonfire-outline" color={color} />
+          ),
+        }}
+        name="Tabs"
+        component={BottomTabNavigator}
       />
-      <Drawer.Screen name="Profile" component={ProfileScreen} />
+
+      <Drawer.Screen
+        options={{
+          drawerIcon: ({color}) => (
+            <IonIcon name="person-circle-outline" color={color} />
+          ),
+        }}
+        name="Profile"
+        component={ProfileScreen}
+      />
     </Drawer.Navigator>
   );
 };
@@ -50,6 +67,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           borderRadius: 50,
         }}
       />
+
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
   );

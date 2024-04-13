@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import {globalStyles} from '../../../config/theme/theme';
-import {PrimaryBotton} from '../../components/shared/PrimaryBotton';
+import {PrimaryButton} from '../../components/shared/PrimaryButton';
 import {StackActions, useNavigation} from '@react-navigation/native';
 
 export const SettingsScreen = () => {
@@ -10,8 +10,8 @@ export const SettingsScreen = () => {
     <View style={globalStyles.container}>
       <Text>Settings Screen</Text>
 
-      <PrimaryBotton label="Regresar" onPress={() => navigation.goBack()} />
-      <PrimaryBotton
+      <PrimaryButton label="Regresar" onPress={() => navigation.goBack()} />
+      <PrimaryButton
         label="Regresar al home"
         onPress={() => navigation.dispatch(StackActions.popToTop())}
       />

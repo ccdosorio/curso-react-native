@@ -1,6 +1,6 @@
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {Text, View} from 'react-native';
-import {RootStackParams} from '../../routes/StackNavigation';
+import {RootStackParams} from '../../routes/StackNavigator';
 import {globalStyles} from '../../../config/theme/theme';
 import {useEffect} from 'react';
 

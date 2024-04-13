@@ -6,7 +6,7 @@ interface Props {
   onPress: () => void;
 }
 
-export const PrimaryBotton = ({label, onPress}: Props) => {
+export const PrimaryButton = ({label, onPress}: Props) => {
   return (
     <Pressable onPress={onPress} style={globalStyles.primaryButton}>
       <Text style={globalStyles.buttonText}>{label}</Text>
