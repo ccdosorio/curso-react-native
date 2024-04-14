@@ -1,3 +1,3 @@
 export abstract class HttpAdapter {
-  abstract get<T>(url: string, options?: Record<string, unknown>): Promise<any>;
+  abstract get<T>(url: string, options?: Record<string, unknown>): Promise<T>;
 }
