@@ -4,6 +4,8 @@ import {RootStackParams} from '../../navigation/StackNavigator';
 
 import {useMovie} from '../../hooks/useMovie';
 import {MovieHeader} from '../../components/movie/MovieHeader';
+import {MovieDetails} from '../../components/movie/MovieDetails';
+import {ScrollView} from 'react-native-gesture-handler';
 
 interface Props extends StackScreenProps<RootStackParams, 'Details'> {}
 
@@ -16,7 +18,7 @@ export const DetailsScreen = ({route}: Props) => {
   }
 
   return (
-    <>
+    <ScrollView>
       {/* Header */}
 
       <MovieHeader
@@ -24,6 +26,9 @@ export const DetailsScreen = ({route}: Props) => {
         title={movie!.title}
         poster={movie!.poster}
       />
-    </>
+
+      {/* Details */}
+      <MovieDetails movie={movie!} />
+    </ScrollView>
   );
 };
