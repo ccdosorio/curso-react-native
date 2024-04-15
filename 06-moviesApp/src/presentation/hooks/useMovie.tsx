@@ -17,8 +17,6 @@ export const useMovie = (movieId: number) => {
       movieId,
     );
     const [fullMovie] = await Promise.all([fullMoviePromise]);
-    console.log({fullMovie});
-
     setMovie(fullMovie);
     setIsLoading(false);
   };
