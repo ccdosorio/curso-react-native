@@ -1,3 +1,4 @@
+import React from 'react';
 import {StackScreenProps} from '@react-navigation/stack';
 import {RootStackParams} from '../../navigation/StackNavigator';
 import {useMovie} from '../../hooks/useMovie';

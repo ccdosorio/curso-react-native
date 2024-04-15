@@ -1,4 +1,5 @@
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {Image, Pressable, StyleSheet, View} from 'react-native';
 import {Movie} from '../../../core/entities/movie.entity';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParams} from '../../navigation/StackNavigator';

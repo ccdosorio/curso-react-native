@@ -1,13 +1,14 @@
+import React, {useEffect, useRef} from 'react';
 import {
   FlatList,
   NativeScrollEvent,
   NativeSyntheticEvent,
   Text,
   View,
+  StyleSheet,
 } from 'react-native';
 import {Movie} from '../../../core/entities/movie.entity';
 import {MoviePoster} from './MoviePoster';
-import {useEffect, useRef} from 'react';
 
 interface Props {
   movies: Movie[];
@@ -25,34 +26,30 @@ export const HorizontalCarousel = ({movies, title, loadNextPage}: Props) => {
   }, [movies]);
 
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    if (isLoading.current) return;
+    if (isLoading.current) {
+      return;
+    }
 
     const {contentOffset, layoutMeasurement, contentSize} = event.nativeEvent;
 
     const isEndReached =
       contentOffset.x + layoutMeasurement.width + 600 >= contentSize.width;
 
-    if (!isEndReached) return;
+    if (!isEndReached) {
+      return;
+    }
 
     isLoading.current = true;
 
-    // Cargar las siguientes peliculas
+    // Cargar las siguientes películas
     loadNextPage && loadNextPage();
   };
 
+  const carouselHeight = title ? 260 : 220;
+
   return (
-    <View style={{height: title ? 260 : 220}}>
-      {title && (
-        <Text
-          style={{
-            fontSize: 30,
-            fontWeight: '300',
-            marginLeft: 10,
-            marginBottom: 10,
-          }}>
-          {title}
-        </Text>
-      )}
+    <View style={[styles.container, {height: carouselHeight}]}>
+      {title && <Text style={styles.title}>{title}</Text>}
 
       <FlatList
         data={movies}
@@ -67,3 +64,16 @@ export const HorizontalCarousel = ({movies, title, loadNextPage}: Props) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 10,
+    height: 220,
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: '300',
+    marginLeft: 10,
+    marginBottom: 10,
+  },
+});

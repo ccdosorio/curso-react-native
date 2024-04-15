@@ -1,4 +1,5 @@
-import {FlatList, Text, View} from 'react-native';
+import React from 'react';
+import {FlatList, Text, View, StyleSheet} from 'react-native';
 import {FullMovie} from '../../../core/entities/movie.entity';
 import {Formatter} from '../../../config/helpers/formatter';
 import {CastActor} from '../cast/CastActor';
@@ -12,37 +13,22 @@ interface Props {
 export const MovieDetails = ({movie, cast}: Props) => {
   return (
     <>
-      <View style={{marginHorizontal: 20}}>
-        <View style={{flexDirection: 'row'}}>
+      <View style={styles.container}>
+        <View style={styles.ratingContainer}>
           <Text>{movie.rating}</Text>
-
-          <Text style={{marginLeft: 5}}>- {movie.genres.join(', ')}</Text>
+          <Text style={styles.genreText}>- {movie.genres.join(', ')}</Text>
         </View>
 
-        <Text style={{fontSize: 23, marginTop: 10, fontWeight: 'bold'}}>
-          Historia
-        </Text>
-        <Text style={{fontSize: 16}}>{movie.description}</Text>
+        <Text style={styles.title}>Historia</Text>
+        <Text style={styles.description}>{movie.description}</Text>
 
-        <Text style={{fontSize: 23, marginTop: 10, fontWeight: 'bold'}}>
-          Presupuesto
-        </Text>
-
-        <Text style={{fontSize: 18}}>{Formatter.currency(movie.budget)}</Text>
+        <Text style={styles.title}>Presupuesto</Text>
+        <Text style={styles.budget}>{Formatter.currency(movie.budget)}</Text>
       </View>
 
       {/* Casting */}
-      <View style={{marginTop: 10, marginBottom: 50}}>
-        <Text
-          style={{
-            fontSize: 23,
-            marginVertical: 10,
-            fontWeight: 'bold',
-            marginHorizontal: 20,
-          }}>
-          Actores
-        </Text>
-
+      <View style={styles.castContainer}>
+        <Text style={styles.castTitle}>Actores</Text>
         <FlatList
           data={cast}
           keyExtractor={item => `${item.id}`}
@@ -54,3 +40,36 @@ export const MovieDetails = ({movie, cast}: Props) => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 20,
+  },
+  ratingContainer: {
+    flexDirection: 'row',
+  },
+  genreText: {
+    marginLeft: 5,
+  },
+  title: {
+    fontSize: 23,
+    marginTop: 10,
+    fontWeight: 'bold',
+  },
+  description: {
+    fontSize: 16,
+  },
+  budget: {
+    fontSize: 18,
+  },
+  castContainer: {
+    marginTop: 10,
+    marginBottom: 50,
+  },
+  castTitle: {
+    fontSize: 23,
+    marginVertical: 10,
+    fontWeight: 'bold',
+    marginHorizontal: 20,
+  },
+});
